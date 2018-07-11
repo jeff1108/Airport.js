@@ -5,8 +5,14 @@ var Airport = function() {
 var Plane = function() {}
 
 Airport.prototype.land = function(plane) {
-  this.planes.push(plane)
-  return "Plane landed successfully"
+
+
+  if (this.planes.indexOf(plane) == -1) {
+    this.planes.push(plane)
+    return "Plane landed successfully"
+  } else {
+    throw new Error("Cannot land: already at airport")
+  }
 }
 
 Airport.prototype.takeoff = function (plane) {
