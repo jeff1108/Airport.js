@@ -17,7 +17,10 @@ Airport.prototype.land = function(plane) {
 
 Airport.prototype.takeoff = function (plane) {
   var index = this.planes.indexOf(plane)
-  if (index > -1) {
+
+  if (index == -1) {
+    throw new Error('Cannot takeoff: plane not here')
+  } else {
     this.planes.splice(index, 1)
   }
 }
