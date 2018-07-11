@@ -10,8 +10,8 @@ Airport.prototype.land = function(plane) {
 }
 
 Airport.prototype.takeoff = function(plane) {
-  // if planes is empty {
-  //   raise_error
-  // }
-  this.planes.pop(plane)
+  var index = this.planes.indexOf(plane)
+  if (index > -1) {
+    this.planes.splice(index, 1)
+  }
 }
