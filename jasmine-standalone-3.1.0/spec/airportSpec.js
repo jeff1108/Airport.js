@@ -23,7 +23,7 @@ describe('Airport: ', function() {
   describe('return error', function() {
     it('when already at the airport',function() {
       airport.land(plane)
-      expect(airport.land(plane)).toThrow("Cannot land: already at airport")
+      expect(function() {airport.land(plane)}).toThrow("Cannot land: already at airport")
     });
   });
 
